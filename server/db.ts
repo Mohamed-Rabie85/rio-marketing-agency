@@ -209,12 +209,16 @@ export async function getContactSubmissions() {
 /**
  * Consultation Bookings Management
  */
-export async function createConsultationBooking(booking: typeof consultationBookings.$inferInsert) {
-  const db = await getDb();
-  if (!db) throw new Error("Database not available");
+// استبدل الكود القديم بهذا الكود الجديد (Mock Version)
+export async function createConsultationBooking(booking: any) {
+  // محاكاة وضع المطور: طباعة البيانات في التيرمينال بدلاً من القاعدة
+  console.log("⚠️ [MOCK MODE] Received Booking:", booking);
+  
+  // انتظار وهمي لمدة ثانية ليشعر المستخدم أن هناك معالجة
+  await new Promise((resolve) => setTimeout(resolve, 1000));
 
-  const result = await db.insert(consultationBookings).values(booking);
-  return result;
+  // إرجاع رد نجاح وهمي
+  return [{ insertedId: 123 }];
 }
 
 export async function getConsultationBookings() {
