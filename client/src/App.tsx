@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { Toaster } from '@/components/ui/sonner';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import NotFound from '@/pages/NotFound';
@@ -43,7 +44,10 @@ function App() {
     <ErrorBoundary>
       <ThemeProvider defaultTheme="light">
         <TooltipProvider>
+          {/* مكون التحليلات يوضع هنا ليعمل في كامل الموقع */}
+          <Analytics />
           <Toaster />
+
           <div className="flex flex-col min-h-screen">
             <Navigation />
             <main className="flex-1">
