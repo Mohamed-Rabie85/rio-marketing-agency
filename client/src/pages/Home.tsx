@@ -199,28 +199,26 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[1, 2, 3].map((i) => (
-              <Card key={i} className="hover:shadow-lg transition-shadow duration-300">
-                <div className="aspect-video bg-muted relative overflow-hidden rounded-t-xl group">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
-                    <span className="text-white text-sm font-medium bg-primary/90 px-3 py-1 rounded-full">استراتيجية</span>
+              <div key={i} className="group cursor-pointer rounded-2xl border border-border/50 bg-card overflow-hidden hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1">
+                <div className="aspect-[16/10] bg-muted relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-5 opacity-90 group-hover:opacity-100 transition-opacity">
+                    <span className="text-white text-xs font-bold bg-primary px-3 py-1 rounded-full shadow-lg backdrop-blur-md">استراتيجية</span>
                   </div>
                 </div>
-                <CardHeader>
-                  <CardTitle className="line-clamp-2 leading-relaxed">كيف تختار القناة التسويقية الأنسب لنشاطك التجاري في 2025؟</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground line-clamp-3 mb-4">
-                    في ظل تعدد المنصات الرقمية، يصبح اختيار القناة الصحيحة هو العامل الحاسم في نجاح حملتك التسويقية وتقليل التكاليف المهدرة.
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-3 leading-snug group-hover:text-primary transition-colors">
+                    كيف تختار القناة التسويقية الأنسب لنشاطك التجاري في 2025؟
+                  </h3>
+                  <p className="text-muted-foreground text-sm line-clamp-2 mb-4 leading-relaxed opacity-80">
+                    في ظل تعدد المنصات الرقمية، يصبح اختيار القناة الصحيحة هو العامل الحاسم في نجاح حملتك التسويقية.
                   </p>
-                  <Link href={`/blog/post-${i}`}>
-                    <a className="text-primary font-bold hover:underline inline-flex items-center">
-                      اقرأ المزيد <ArrowRight className="mr-2 w-4 h-4" />
-                    </a>
-                  </Link>
-                </CardContent>
-              </Card>
+                  <div className="flex items-center text-primary text-sm font-bold mt-auto pt-4 border-t border-border/40">
+                    اقرأ المزيد <ArrowRight className="mr-2 w-4 h-4 transition-transform group-hover:-translate-x-1" />
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
 
