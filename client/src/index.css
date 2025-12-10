@@ -46,34 +46,43 @@
 
 :root {
   /* RIO Marketing Solutions - Creative Growth Theme */
-  --primary: oklch(0.55 0.22 270); /* Indigo 600 - Creative Lead */
-  --primary-foreground: oklch(1 0 0); /* White */
-  
-  --secondary: oklch(0.65 0.18 35); /* Orange 500 - Energetic Action */
-  --secondary-foreground: oklch(1 0 0); 
+  --primary: oklch(0.55 0.22 270);
+  /* Indigo 600 - Creative Lead */
+  --primary-foreground: oklch(1 0 0);
+  /* White */
 
-  --accent: oklch(0.65 0.18 275); /* Violet 500 - Soft Detail */
+  --secondary: oklch(0.65 0.18 35);
+  /* Orange 500 - Energetic Action */
+  --secondary-foreground: oklch(1 0 0);
+
+  --accent: oklch(0.65 0.18 275);
+  /* Violet 500 - Soft Detail */
   --accent-foreground: oklch(1 0 0);
 
-  --background: oklch(0.985 0.002 247.839); /* Slate 50 - Clean Canvas */
-  --foreground: oklch(0.13 0.028 261.692); /* Slate 900 - Deep Readability */
+  --background: oklch(0.985 0.002 247.839);
+  /* Slate 50 - Clean Canvas */
+  --foreground: oklch(0.13 0.028 261.692);
+  /* Slate 900 - Deep Readability */
 
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.13 0.028 261.692);
-  
+
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.13 0.028 261.692);
-  
-  --muted: oklch(0.96 0.004 261.32); /* Slate 100 */
-  --muted-foreground: oklch(0.45 0.03 261.32); /* Slate 500 */
-  
+
+  --muted: oklch(0.96 0.004 261.32);
+  /* Slate 100 */
+  --muted-foreground: oklch(0.45 0.03 261.32);
+  /* Slate 500 */
+
   --destructive: oklch(0.63 0.23 25);
   --destructive-foreground: oklch(1 0 0);
-  
-  --border: oklch(0.92 0.006 264.531); /* Slate 200 */
+
+  --border: oklch(0.92 0.006 264.531);
+  /* Slate 200 */
   --input: oklch(0.92 0.006 264.531);
   --ring: oklch(0.55 0.22 270);
-  
+
   --radius: 0.65rem;
 
   /* Sidebar defaults */
@@ -87,43 +96,50 @@
   --sidebar-ring: oklch(0.55 0.22 270);
 
   /* Charts - Vibrant Spectrum */
-  --chart-1: oklch(0.55 0.22 270); /* Indigo */
-  --chart-2: oklch(0.65 0.18 35);  /* Orange */
-  --chart-3: oklch(0.60 0.20 280); /* Purple */
-  --chart-4: oklch(0.70 0.15 150); /* Teal - for balance */
-  --chart-5: oklch(0.75 0.15 85);  /* Yellow - for highlights */
+  --chart-1: oklch(0.55 0.22 270);
+  /* Indigo */
+  --chart-2: oklch(0.65 0.18 35);
+  /* Orange */
+  --chart-3: oklch(0.60 0.20 280);
+  /* Purple */
+  --chart-4: oklch(0.70 0.15 150);
+  /* Teal - for balance */
+  --chart-5: oklch(0.75 0.15 85);
+  /* Yellow - for highlights */
 }
 
 .dark {
   /* Dark Mode - Creative Depth */
   --primary: oklch(0.65 0.20 270);
   --primary-foreground: oklch(1 0 0);
-  
+
   --secondary: oklch(0.70 0.16 35);
   --secondary-foreground: oklch(1 0 0);
 
   --accent: oklch(0.70 0.16 275);
   --accent-foreground: oklch(1 0 0);
-  
-  --background: oklch(0.13 0.028 261.692); /* Slate 900 */
+
+  --background: oklch(0.13 0.028 261.692);
+  /* Slate 900 */
   --foreground: oklch(0.98 0.004 261.32);
-  
-  --card: oklch(0.17 0.03 261.32); /* Slate 800 */
+
+  --card: oklch(0.17 0.03 261.32);
+  /* Slate 800 */
   --card-foreground: oklch(0.98 0.004 261.32);
-  
+
   --popover: oklch(0.17 0.03 261.32);
   --popover-foreground: oklch(0.98 0.004 261.32);
-  
+
   --muted: oklch(0.25 0.02 261.32);
   --muted-foreground: oklch(0.70 0.02 261.32);
-  
+
   --destructive: oklch(0.63 0.23 25);
   --destructive-foreground: oklch(1 0 0);
-  
+
   --border: oklch(0.25 0.02 261.32);
   --input: oklch(0.25 0.02 261.32);
   --ring: oklch(0.65 0.20 270);
-  
+
   --sidebar: oklch(0.13 0.028 261.692);
   --sidebar-foreground: oklch(0.98 0.004 261.32);
   --sidebar-primary: oklch(0.65 0.20 270);
@@ -132,7 +148,7 @@
   --sidebar-accent-foreground: oklch(0.98 0.004 261.32);
   --sidebar-border: oklch(0.25 0.02 261.32);
   --sidebar-ring: oklch(0.65 0.20 270);
-  
+
   --chart-1: oklch(0.65 0.20 270);
   --chart-2: oklch(0.70 0.16 35);
   --chart-3: oklch(0.70 0.18 280);
@@ -144,9 +160,11 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
   [type="button"]:not(:disabled),
@@ -165,8 +183,8 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   .flex {
@@ -176,16 +194,16 @@
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem;
-      padding-right: 2rem;
-      max-width: 1280px; 
+      padding-left: 6rem;
+      padding-right: 6rem;
+      max-width: 1400px;
     }
   }
 }
@@ -201,13 +219,19 @@
     direction: rtl;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: 'Cairo', sans-serif;
     font-weight: 700;
   }
 }
 
 @layer components {
+
   /* Gradient backgrounds - Updated for Purple/Orange */
   .gradient-primary {
     @apply bg-gradient-to-br from-primary to-accent;
@@ -230,7 +254,7 @@
   .shadow-medium {
     @apply shadow-xl shadow-primary/10;
   }
-  
+
   .shadow-glow {
     @apply shadow-lg shadow-secondary/20;
   }
