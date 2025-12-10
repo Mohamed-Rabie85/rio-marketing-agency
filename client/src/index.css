@@ -45,76 +45,99 @@
 }
 
 :root {
-  /* RIO Marketing Solutions - Elegant Green Theme */
-  --primary: oklch(0.55 0.15 142); /* Professional Green */
-  --primary-foreground: oklch(1 0 0);
-  --sidebar-primary: oklch(0.50 0.14 142);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --chart-1: oklch(0.60 0.12 142);
-  --chart-2: oklch(0.55 0.15 142);
-  --chart-3: oklch(0.50 0.14 142);
-  --chart-4: oklch(0.45 0.13 142);
-  --chart-5: oklch(0.40 0.12 142);
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
+  /* RIO Marketing Solutions - Creative Growth Theme */
+  --primary: oklch(0.55 0.22 270); /* Indigo 600 - Creative Lead */
+  --primary-foreground: oklch(1 0 0); /* White */
+  
+  --secondary: oklch(0.65 0.18 35); /* Orange 500 - Energetic Action */
+  --secondary-foreground: oklch(1 0 0); 
+
+  --accent: oklch(0.65 0.18 275); /* Violet 500 - Soft Detail */
+  --accent-foreground: oklch(1 0 0);
+
+  --background: oklch(0.985 0.002 247.839); /* Slate 50 - Clean Canvas */
+  --foreground: oklch(0.13 0.028 261.692); /* Slate 900 - Deep Readability */
+
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
+  --card-foreground: oklch(0.13 0.028 261.692);
+  
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.62 0.13 180); /* Teal Accent */
-  --secondary-foreground: oklch(1 0 0);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.70 0.15 45); /* Gold Accent */
-  --accent-foreground: oklch(0.141 0.005 285.823);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.55 0.15 142);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.62 0.13 180);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.55 0.15 142);
+  --popover-foreground: oklch(0.13 0.028 261.692);
+  
+  --muted: oklch(0.96 0.004 261.32); /* Slate 100 */
+  --muted-foreground: oklch(0.45 0.03 261.32); /* Slate 500 */
+  
+  --destructive: oklch(0.63 0.23 25);
+  --destructive-foreground: oklch(1 0 0);
+  
+  --border: oklch(0.92 0.006 264.531); /* Slate 200 */
+  --input: oklch(0.92 0.006 264.531);
+  --ring: oklch(0.55 0.22 270);
+  
+  --radius: 0.65rem;
+
+  /* Sidebar defaults */
+  --sidebar: oklch(0.985 0.002 247.839);
+  --sidebar-foreground: oklch(0.13 0.028 261.692);
+  --sidebar-primary: oklch(0.55 0.22 270);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.96 0.004 261.32);
+  --sidebar-accent-foreground: oklch(0.13 0.028 261.692);
+  --sidebar-border: oklch(0.92 0.006 264.531);
+  --sidebar-ring: oklch(0.55 0.22 270);
+
+  /* Charts - Vibrant Spectrum */
+  --chart-1: oklch(0.55 0.22 270); /* Indigo */
+  --chart-2: oklch(0.65 0.18 35);  /* Orange */
+  --chart-3: oklch(0.60 0.20 280); /* Purple */
+  --chart-4: oklch(0.70 0.15 150); /* Teal - for balance */
+  --chart-5: oklch(0.75 0.15 85);  /* Yellow - for highlights */
 }
 
 .dark {
-  /* Dark Mode - RIO Marketing Solutions */
-  --primary: oklch(0.60 0.14 142);
-  --primary-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-primary: oklch(0.55 0.13 142);
-  --sidebar-primary-foreground: oklch(0.141 0.005 285.823);
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.65 0.12 180);
-  --secondary-foreground: oklch(0.141 0.005 285.823);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.75 0.14 45);
-  --accent-foreground: oklch(0.141 0.005 285.823);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.60 0.14 142);
-  --chart-1: oklch(0.65 0.12 142);
-  --chart-2: oklch(0.60 0.14 142);
-  --chart-3: oklch(0.55 0.13 142);
-  --chart-4: oklch(0.50 0.12 142);
-  --chart-5: oklch(0.45 0.11 142);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.65 0.12 180);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.60 0.14 142);
+  /* Dark Mode - Creative Depth */
+  --primary: oklch(0.65 0.20 270);
+  --primary-foreground: oklch(1 0 0);
+  
+  --secondary: oklch(0.70 0.16 35);
+  --secondary-foreground: oklch(1 0 0);
+
+  --accent: oklch(0.70 0.16 275);
+  --accent-foreground: oklch(1 0 0);
+  
+  --background: oklch(0.13 0.028 261.692); /* Slate 900 */
+  --foreground: oklch(0.98 0.004 261.32);
+  
+  --card: oklch(0.17 0.03 261.32); /* Slate 800 */
+  --card-foreground: oklch(0.98 0.004 261.32);
+  
+  --popover: oklch(0.17 0.03 261.32);
+  --popover-foreground: oklch(0.98 0.004 261.32);
+  
+  --muted: oklch(0.25 0.02 261.32);
+  --muted-foreground: oklch(0.70 0.02 261.32);
+  
+  --destructive: oklch(0.63 0.23 25);
+  --destructive-foreground: oklch(1 0 0);
+  
+  --border: oklch(0.25 0.02 261.32);
+  --input: oklch(0.25 0.02 261.32);
+  --ring: oklch(0.65 0.20 270);
+  
+  --sidebar: oklch(0.13 0.028 261.692);
+  --sidebar-foreground: oklch(0.98 0.004 261.32);
+  --sidebar-primary: oklch(0.65 0.20 270);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.25 0.02 261.32);
+  --sidebar-accent-foreground: oklch(0.98 0.004 261.32);
+  --sidebar-border: oklch(0.25 0.02 261.32);
+  --sidebar-ring: oklch(0.65 0.20 270);
+  
+  --chart-1: oklch(0.65 0.20 270);
+  --chart-2: oklch(0.70 0.16 35);
+  --chart-3: oklch(0.70 0.18 280);
+  --chart-4: oklch(0.75 0.15 150);
+  --chart-5: oklch(0.80 0.15 85);
 }
 
 @layer base {
@@ -138,24 +161,11 @@
 }
 
 @layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
+    padding-left: 1rem;
     padding-right: 1rem;
   }
 
@@ -166,16 +176,16 @@
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem; /* 32px - desktop padding */
+      padding-left: 2rem;
       padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
+      max-width: 1280px; 
     }
   }
 }
@@ -184,10 +194,10 @@
 @layer base {
   html {
     direction: rtl;
+    font-family: 'Cairo', 'Inter', sans-serif;
   }
 
   body {
-    font-family: 'Cairo', 'Inter', sans-serif;
     direction: rtl;
   }
 
@@ -198,9 +208,9 @@
 }
 
 @layer components {
-  /* Gradient backgrounds */
+  /* Gradient backgrounds - Updated for Purple/Orange */
   .gradient-primary {
-    @apply bg-gradient-to-br from-primary to-primary/80;
+    @apply bg-gradient-to-br from-primary to-accent;
   }
 
   .gradient-secondary {
@@ -209,21 +219,25 @@
 
   /* Text gradients */
   .text-gradient {
-    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent;
   }
 
-  /* Shadows */
+  /* Shadows - Colored shadows */
   .shadow-soft {
-    @apply shadow-lg shadow-primary/10;
+    @apply shadow-lg shadow-primary/5;
   }
 
   .shadow-medium {
-    @apply shadow-xl shadow-primary/20;
+    @apply shadow-xl shadow-primary/10;
+  }
+  
+  .shadow-glow {
+    @apply shadow-lg shadow-secondary/20;
   }
 
   /* Cards */
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-lg hover:scale-105;
+    @apply transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:scale-[1.02] hover:border-primary/20;
   }
 
   /* Section spacing */
@@ -237,7 +251,7 @@
 
   /* Dividers */
   .divider-primary {
-    @apply h-1 bg-gradient-to-r from-primary to-secondary rounded-full;
+    @apply h-1 bg-gradient-to-r from-primary via-accent to-secondary rounded-full;
   }
 
   /* RTL Input and Textarea */

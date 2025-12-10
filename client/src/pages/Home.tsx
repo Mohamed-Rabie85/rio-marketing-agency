@@ -33,24 +33,24 @@ export default function Home() {
 
   const services = [
     {
-      title: 'باقة التواجد الرقمي الاحترافي',
-      description: 'بناء هوية رقمية قوية وموثوقة لعملك',
-      features: ['موقع ويب احترافي', 'هوية بصرية متكاملة', 'استراتيجية محتوى'],
+      title: 'الاستشارات الاستراتيجية',
+      description: 'جلسات تشخيص وخرائط طريق لنمو عملك',
+      features: ['جلسات تشخيص', 'مستشار دائم', 'خرائط طريق'],
     },
     {
-      title: 'باقة النمو واكتساب العملاء',
-      description: 'تحويل تواجدك الرقمي إلى عملاء فعليين',
-      features: ['استراتيجية تسويق رقمي', 'إدارة الحملات', 'تحسين التحويلات'],
+      title: 'حلول التنفيذ المتكاملة',
+      description: 'إدارة تواجدك الرقمي وحملاتك الإعلانية',
+      features: ['إدارة السوشيال ميديا', 'إعلانات ممولة', 'كتابة محتوى'],
     },
     {
-      title: 'جلسة التشخيص الاستراتيجي',
-      description: 'فهم عميق لوضعك الحالي ورسم خطة واضحة',
-      features: ['تحليل شامل', 'توصيات مخصصة', 'خطة عمل واضحة'],
+      title: 'بناء الأصول الرقمية',
+      description: 'تصميم وتطوير أصول رقمية مبتكرة',
+      features: ['تطوير منصات', 'تطبيقات خاصة', 'حلول تقنية'],
     },
     {
-      title: 'خدمة الشريك التسويقي الدائم',
-      description: 'شريك استراتيجي يرافقك في رحلة النمو',
-      features: ['استشارات مستمرة', 'إشراف على التنفيذ', 'تحسين مستمر'],
+      title: 'الخدمات التكميلية',
+      description: 'خدمات داعمة لتعزيز حضورك في السوق',
+      features: ['طباعة ومواد دعائية', 'تجهيز فعاليات', 'هدايا شركات'],
     },
   ];
 
@@ -66,7 +66,7 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
-              شراكة تبدأ بالخبرة <span className="text-gradient">وتنتهي بالنمو</span>
+              شراكة تبدأ بالخبرة.. <span className="text-gradient">وتنتهي بالنمو</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8">
               نحول تحديات عملك إلى فرص حقيقية، ونترجمها إلى خطط واضحة ونتائج يمكنك قياسها
@@ -96,9 +96,9 @@ export default function Home() {
       <section className="section-padding bg-background">
         <div className="container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">فلسفتنا</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">نموذج النمو المتكامل</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              نؤمن أن النجاح الحقيقي يأتي من الجمع بين الأخلاق والكفاءة والفهم العميق
+              نحن لسنا مجرد وكالة، نحن شريك نمو يدمج بين الاستشارة والتنفيذ
             </p>
           </div>
 
@@ -137,8 +137,8 @@ export default function Home() {
             {services.map((service, index) => (
               <Card key={index} className="border-border card-hover">
                 <CardHeader>
-                  <CardTitle>{service.title}</CardTitle>
-                  <CardDescription>{service.description}</CardDescription>
+                  <CardTitle className="text-xl">{service.title}</CardTitle>
+                  <CardDescription className="text-base">{service.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">

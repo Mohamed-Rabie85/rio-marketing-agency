@@ -68,7 +68,7 @@ export default function Services() {
       ],
     },
     {
-      title: 'خدمة الشريك التسويقي الدائم',
+      title: 'خدمة المستشار التسويقي الدائم',
       description: 'شريك استراتيجي يرافقك في رحلة النمو',
       duration: 'عقد شهري/سنوي',
       features: [
@@ -224,6 +224,64 @@ export default function Services() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Digital Assets Section */}
+      <section className="section-padding bg-background">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-2">بناء الأصول الرقمية</h2>
+            <p className="text-lg text-muted-foreground">
+              حلول تقنية مبتكرة لخدمة أهداف عملك
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { title: 'تطوير المنصات', desc: 'بناء منصات متخصصة تخدم عملياتك وعملائك' },
+              { title: 'تطبيقات الويب', desc: 'تطبيقات تفاعلية متطورة تعمل على المتصفح' },
+              { title: 'تصميم تجربة المستخدم', desc: 'تصميم واجهات احترافية تركز على سهولة الاستخدام' }
+            ].map((item, i) => (
+              <Card key={i} className="border-border">
+                <CardHeader>
+                  <CardTitle className="text-xl">{item.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">{item.desc}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Supplementary Services */}
+      <section className="section-padding bg-card">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-2">خدمات تكميلية</h2>
+            <p className="text-lg text-muted-foreground">
+              دعم شامل لاحتياجاتك التسويقية الأوفلاين
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <Card className="border-border">
+              <CardHeader>
+                <CardTitle>تصميم وطباعة المواد الدعائية</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">تصميم وتنفيذ كافة المطبوعات والهدايا الدعائية بجودة عالية.</p>
+              </CardContent>
+            </Card>
+            <Card className="border-border">
+              <CardHeader>
+                <CardTitle>تجهيز الفعاليات</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">تخطيط وتجهيز أجنحة المعارض والمؤتمرات لضمان أفضل ظهور.</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
