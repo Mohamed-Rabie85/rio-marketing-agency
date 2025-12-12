@@ -17,19 +17,16 @@ export default function Home() {
 
         <div className="container relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-block mb-4 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-primary text-sm font-medium">
-              خبرة ممتدة في السوق المصري منذ 2015
-            </div>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight text-foreground">
-              شراكة تبدأ بالخبرة.. <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary">وتنتهي بالنمو</span>
+              ريو: شريكك التنفيذي <br className="hidden md:block" /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary">لنمو الأعمال</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-              نحول تحديات عملك إلى فرص حقيقية، ونترجمها إلى خطط واضحة ونتائج يمكنك قياسها. شريكك المتكامل للنجاح أونلاين وأوفلاين.
+              خبرة 9 سنوات في تحويل الشركات. شريكك التنفيذي الذي يحوّل تحديات أعمالك إلى نمو مستدام وعائد استثمار حقيقي.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
                 <a>
-                  <Button size="lg" className="w-full sm:w-auto h-12 px-8 text-lg bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20">
+                  <Button size="lg" className="w-full sm:w-auto h-12 px-8 text-lg bg-secondary hover:bg-secondary/90 shadow-lg shadow-secondary/20">
                     احجز استشارة مجانية
                     <ArrowRight className="w-5 h-5 mr-2" />
                   </Button>
@@ -42,6 +39,41 @@ export default function Home() {
                   </Button>
                 </a>
               </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 1.5. VALUE PROPOSITION: Why Rio? */}
+      <section className="py-12 bg-muted/30 border-y border-border/50">
+        <div className="container">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-right">
+            <div className="p-6 rounded-2xl bg-background border border-border/50 shadow-sm hover:shadow-md transition-all">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 text-primary">
+                <TrendingUp className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">الخبرة التنفيذية (20 عاماً)</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                لا نقدم نظريات. خبرة 20 عاماً في تأسيس الشركات، و9 سنوات لـ "ريو" في مصر والسعودية تضمن لك خططاً قابلة للتطبيق.
+              </p>
+            </div>
+            <div className="p-6 rounded-2xl bg-background border border-border/50 shadow-sm hover:shadow-md transition-all">
+              <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mb-4 text-secondary">
+                <ShieldCheck className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">الشفافية المطلقة</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                شراكة حقيقية بلا أسرار. تقاريرنا توضح أين يُنفق كل جنيه وما هو العائد الفعلي (ROI) على استثمارك التسويقي.
+              </p>
+            </div>
+            <div className="p-6 rounded-2xl bg-background border border-border/50 shadow-sm hover:shadow-md transition-all">
+              <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-4 text-accent">
+                <CheckCircle2 className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">المنهجية الاستراتيجية</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                لا نعتمد على العشوائية. نبني خططنا على البيانات والتحليل العميق لضمان أن كل خطوة تخدم هدف النمو.
+              </p>
             </div>
           </div>
         </div>

@@ -21,12 +21,14 @@ export default function Navigation() {
         {/* Logo */}
         <Link href="/">
           <a className="flex items-center gap-2 group">
-            <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent text-white font-bold text-xl shadow-lg transition-transform group-hover:scale-105">
-              R
-            </div>
+            <img
+              src="/logo.svg"
+              alt="RIO Marketing Solutions"
+              className="h-12 w-auto object-contain transition-transform group-hover:scale-105"
+            />
             <div className="flex flex-col">
-              <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary leading-none">
-                RIO
+              <span className="text-xl font-bold text-primary leading-none">
+                ريو للحلول التسويقية
               </span>
               <span className="text-[0.65rem] text-muted-foreground font-medium tracking-wider uppercase">
                 Marketing Solutions
@@ -53,7 +55,7 @@ export default function Navigation() {
           ))}
           <Link href="/contact">
             <a>
-              <Button className="bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5">
+              <Button className="bg-secondary hover:bg-secondary/90 text-white shadow-lg shadow-secondary/20 transition-all hover:-translate-y-0.5">
                 تواصل معنا
               </Button>
             </a>

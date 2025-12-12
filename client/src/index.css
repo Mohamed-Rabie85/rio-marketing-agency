@@ -45,19 +45,19 @@
 }
 
 :root {
-  /* RIO Marketing Solutions - Creative Growth Theme */
-  --primary: oklch(0.55 0.22 270);
-  /* Indigo 600 - Creative Lead */
-  --primary-foreground: oklch(1 0 0);
+  /* RIO Marketing Solutions - Professional Brand Theme */
+  --primary: #0b1e3b;
+  /* Deep Navy Blue */
+  --primary-foreground: #ffffff;
   /* White */
 
-  --secondary: oklch(0.65 0.18 35);
-  /* Orange 500 - Energetic Action */
-  --secondary-foreground: oklch(1 0 0);
+  --secondary: #ff3b30;
+  /* Bright Red/Orange */
+  --secondary-foreground: #ffffff;
 
-  --accent: oklch(0.65 0.18 275);
-  /* Violet 500 - Soft Detail */
-  --accent-foreground: oklch(1 0 0);
+  --accent: #0b1e3b; 
+  /* Using Primary as accent to reduce noise, or a light variation */
+  --accent-foreground: #ffffff;
 
   --background: oklch(0.985 0.002 247.839);
   /* Slate 50 - Clean Canvas */
