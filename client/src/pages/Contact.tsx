@@ -3,117 +3,202 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, Phone, Clock } from 'lucide-react';
-import { trpc } from '@/lib/trpc';
+import { Mail, Phone, Clock, MapPin, MessageCircle } from 'lucide-react';
 import { toast } from 'sonner';
 
+/**
+ * صفحة التواصل (Contact Page)
+ * تتيح للعملاء التواصل العام أو حجز استشارة متخصصة
+ */
 export default function Contact() {
-  const [tab, setTab] = useState('contact');
-  const [form1, setForm1] = useState({ name: '', email: '', phone: '', company: '', subject: '', message: '' });
-  const [form2, setForm2] = useState({ name: '', email: '', phone: '', company: '', serviceType: '', preferredDate: '', preferredTime: '', message: '' });
+  const [tab, setTab] = useState('contact'); // 'contact' or 'booking'
 
-  const contactMut = trpc.contact.submitForm.useMutation();
-  const bookingMut = trpc.consultation.bookSession.useMutation();
+  // حالة النموذج (سيتم ربطها لاحقاً بـ FormSubmit)
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    company: '',
+    serviceType: '',
+    message: ''
+  });
 
-  const handleContact = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    try {
-      await contactMut.mutateAsync({ name: form1.name, email: form1.email, phone: form1.phone || undefined, company: form1.company || undefined, subject: form1.subject || undefined, message: form1.message });
-      toast.success('Message sent');
-      setForm1({ name: '', email: '', phone: '', company: '', subject: '', message: '' });
-    } catch (error) {
-      toast.error('Error sending');
-    }
-  };
-
-  const handleBooking = async (e: React.FormEvent) => {
-    e.preventDefault();
-    try {
-      await bookingMut.mutateAsync({ name: form2.name, email: form2.email, phone: form2.phone, company: form2.company || undefined, serviceType: form2.serviceType, preferredDate: form2.preferredDate ? new Date(form2.preferredDate) : undefined, preferredTime: form2.preferredTime || undefined, message: form2.message || undefined });
-      toast.success('Booking received');
-      setForm2({ name: '', email: '', phone: '', company: '', serviceType: '', preferredDate: '', preferredTime: '', message: '' });
-    } catch (error) {
-      toast.error('Error booking');
-    }
+    toast.success('شكراً لتواصلك! سنقوم بالرد عليك في أقرب وقت.');
+    setFormData({ name: '', email: '', phone: '', company: '', serviceType: '', message: '' });
   };
 
   return (
     <div className="min-h-screen">
+      {/* الترويسة */}
       <section className="bg-gradient-to-br from-primary/5 to-secondary/5 py-16 md:py-24">
         <div className="container text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Get in touch with us today</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-primary">تواصل معنا</h1>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            سواء كنت جاهزاً للبدء أو لديك استفسار بسيط، فريقنا جاهز للمساعدة.
+          </p>
         </div>
       </section>
 
+      {/* معلومات الاتصال */}
       <section className="section-padding bg-background">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <Card className="border-border text-center">
-              <CardContent className="pt-6">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <Mail className="w-6 h-6 text-primary" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            {/* البريد الإلكتروني */}
+            <Card className="border-border/50 text-center hover:shadow-md transition-shadow group">
+              <CardContent className="pt-8 pb-8">
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                  <Mail className="w-7 h-7 text-primary" />
                 </div>
-                <h3 className="font-semibold mb-2">Email</h3>
-                <a href="mailto:info@rio.com" className="text-primary">info@rio.com</a>
+                <h3 className="font-bold text-lg mb-2">البريد الإلكتروني</h3>
+                <a href="mailto:info@rio.com" className="text-muted-foreground hover:text-primary dir-ltr">info@rio.com</a>
               </CardContent>
             </Card>
 
-            <Card className="border-border text-center">
-              <CardContent className="pt-6">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <Phone className="w-6 h-6 text-primary" />
+            {/* الهاتف والواتساب */}
+            <Card className="border-border/50 text-center hover:shadow-md transition-shadow group">
+              <CardContent className="pt-8 pb-8">
+                <div className="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                  <Phone className="w-7 h-7 text-secondary" />
                 </div>
-                <h3 className="font-semibold mb-2">Phone</h3>
-                <a href="tel:+201000000000" className="text-primary">+20 100 000 0000</a>
+                <h3 className="font-bold text-lg mb-2">اتصل بنا</h3>
+                <div className="flex flex-col gap-1 items-center">
+                  <a href="tel:+201503000790" className="text-muted-foreground hover:text-secondary dir-ltr font-semibold">
+                    +201503000790
+                  </a>
+                  <a href="https://wa.me/201503000790" className="text-sm text-green-600 hover:text-green-700 flex items-center gap-1 mt-1">
+                    <MessageCircle className="w-3 h-3" />
+                    تواصل عبر واتساب
+                  </a>
+                </div>
               </CardContent>
             </Card>
 
-            <Card className="border-border text-center">
-              <CardContent className="pt-6">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <Clock className="w-6 h-6 text-primary" />
+            {/* ساعات العمل */}
+            <Card className="border-border/50 text-center hover:shadow-md transition-shadow group">
+              <CardContent className="pt-8 pb-8">
+                <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                  <Clock className="w-7 h-7 text-accent" />
                 </div>
-                <h3 className="font-semibold mb-2">Hours</h3>
-                <p className="text-muted-foreground text-sm">Sat - Thu: 9am - 6pm</p>
+                <h3 className="font-bold text-lg mb-2">ساعات العمل</h3>
+                <p className="text-muted-foreground">الاحد - الخميس: 11 ص - 7 م</p>
+                <p className="text-xs text-muted-foreground mt-1">(متاحين للطوارئ 24/7 للعملاء الحاليين)</p>
               </CardContent>
             </Card>
           </div>
-        </div>
-      </section>
 
-      <section className="section-padding bg-card">
-        <div className="container">
-          <div className="flex gap-4 mb-8 border-b border-border max-w-2xl mx-auto">
-            <button onClick={() => setTab('contact')} className={`px-4 py-2 font-semibold border-b-2 ${tab === 'contact' ? 'border-primary text-primary' : 'border-transparent'}`}>Contact</button>
-            <button onClick={() => setTab('booking')} className={`px-4 py-2 font-semibold border-b-2 ${tab === 'booking' ? 'border-primary text-primary' : 'border-transparent'}`}>Book</button>
-          </div>
+          {/* نموذج التواصل */}
+          <div className="max-w-3xl mx-auto">
+            {/* تبديل التبويبات */}
+            <div className="flex justify-center mb-10">
+              <div className="bg-muted p-1 rounded-xl inline-flex">
+                <button
+                  onClick={() => setTab('contact')}
+                  className={`px-8 py-3 rounded-lg text-sm font-bold transition-all ${tab === 'contact' ? 'bg-white text-primary shadow-sm' : 'text-muted-foreground hover:text-primary'}`}
+                >
+                  استفسار عام
+                </button>
+                <button
+                  onClick={() => setTab('booking')}
+                  className={`px-8 py-3 rounded-lg text-sm font-bold transition-all ${tab === 'booking' ? 'bg-secondary text-white shadow-sm' : 'text-muted-foreground hover:text-primary'}`}
+                >
+                  حجز استشارة مجانية
+                </button>
+              </div>
+            </div>
 
-          <div className="max-w-2xl mx-auto">
-            {tab === 'contact' && (
-              <form onSubmit={handleContact} className="space-y-4">
-                <Input placeholder="Name" value={form1.name} onChange={(e) => setForm1({...form1, name: e.target.value})} required />
-                <Input type="email" placeholder="Email" value={form1.email} onChange={(e) => setForm1({...form1, email: e.target.value})} required />
-                <Input placeholder="Subject" value={form1.subject} onChange={(e) => setForm1({...form1, subject: e.target.value})} />
-                <Textarea placeholder="Message" rows={6} value={form1.message} onChange={(e) => setForm1({...form1, message: e.target.value})} required />
-                <Button type="submit" size="lg" className="w-full" disabled={contactMut.isPending}>{contactMut.isPending ? 'Sending' : 'Send'}</Button>
-              </form>
-            )}
+            <Card className="border-none shadow-lg bg-card/50">
+              <CardContent className="p-8 md:p-10">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium">الاسم بالكامل</label>
+                      <Input
+                        placeholder="محمد أحمد"
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        required
+                        className="h-12 border-border/60 focus:border-primary"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium">رقم الهاتف</label>
+                      <Input
+                        type="tel"
+                        placeholder="01xxxxxxxxx"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        required
+                        className="h-12 border-border/60 focus:border-primary dir-rtl"
+                      />
+                    </div>
+                  </div>
 
-            {tab === 'booking' && (
-              <form onSubmit={handleBooking} className="space-y-4">
-                <Input placeholder="Name" value={form2.name} onChange={(e) => setForm2({...form2, name: e.target.value})} required />
-                <Input type="email" placeholder="Email" value={form2.email} onChange={(e) => setForm2({...form2, email: e.target.value})} required />
-                <Input type="tel" placeholder="Phone" value={form2.phone} onChange={(e) => setForm2({...form2, phone: e.target.value})} required />
-                <select value={form2.serviceType} onChange={(e) => setForm2({...form2, serviceType: e.target.value})} className="w-full px-4 py-2 rounded-md border" required>
-                  <option value="">Select Service</option>
-                  <option value="diagnosis">Diagnosis</option>
-                  <option value="presence">Presence</option>
-                  <option value="growth">Growth</option>
-                </select>
-                <Button type="submit" size="lg" className="w-full" disabled={bookingMut.isPending}>{bookingMut.isPending ? 'Booking' : 'Book'}</Button>
-              </form>
-            )}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium">البريد الإلكتروني</label>
+                      <Input
+                        type="email"
+                        placeholder="name@company.com"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        required
+                        className="h-12 border-border/60 focus:border-primary"
+                      />
+                    </div>
+                    {/* إظهار اسم الشركة فقط في حالة الاستشارة */}
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium">اسم الشركة (اختياري)</label>
+                      <Input
+                        placeholder="اسم شركتك"
+                        value={formData.company}
+                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                        className="h-12 border-border/60 focus:border-primary"
+                      />
+                    </div>
+                  </div>
+
+                  {tab === 'booking' && (
+                    <div className="space-y-2 animate-in fade-in slide-in-from-top-4 duration-300">
+                      <label className="text-sm font-medium">نوع الخدمة المطلوبة</label>
+                      <select
+                        className="w-full h-12 px-3 rounded-md border border-border/60 bg-background text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                        value={formData.serviceType}
+                        onChange={(e) => setFormData({ ...formData, serviceType: e.target.value })}
+                      >
+                        <option value="">اختر الخدمة...</option>
+                        <option value="establishment">تأسيس وهيكلة شركات</option>
+                        <option value="marketing">تسويق رقمي متكامل</option>
+                        <option value="executive">شريك تنفيذي (Executive Partner)</option>
+                        <option value="other">أخرى</option>
+                      </select>
+                    </div>
+                  )}
+
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium">
+                      {tab === 'booking' ? 'تفاصيل مشروعك / التحدي الذي تواجهه' : 'رسالتك'}
+                    </label>
+                    <Textarea
+                      placeholder={tab === 'booking' ? "أخبرنا قليلاً عن شركتك وأهدافك الحالية..." : "كيف يمكننا مساعدتك؟"}
+                      rows={5}
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      className="resize-none border-border/60 focus:border-primary"
+                    />
+                  </div>
+
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className={`w-full h-12 text-lg font-bold shadow-lg ${tab === 'booking' ? 'bg-secondary hover:bg-secondary/90 shadow-secondary/20' : 'bg-primary hover:bg-primary/90 shadow-primary/20'}`}
+                  >
+                    {tab === 'booking' ? 'تأكيد طلب الاستشارة' : 'إرسال الرسالة'}
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

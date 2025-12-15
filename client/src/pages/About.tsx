@@ -1,154 +1,121 @@
 import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Heart, Target, Zap } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Heart, Target, Zap, ShieldCheck, Users, Trophy } from 'lucide-react';
 
 /**
- * About Page - من نحن
- * Displays company values, strategic charter, and business model
+ * صفحة من نحن (About Page)
+ * تعرض قصة الشركة، الرؤية، والقيم الجوهرية
  */
 export default function About() {
+  // القيم الجوهرية للشركة
   const coreValues = [
     {
-      icon: Heart,
+      icon: <Heart className="w-8 h-8 text-primary" />,
       title: 'الأخلاق أولاً',
-      description: 'نؤمن أن الأخلاق والشفافية هي أساس أي علاقة عمل ناجحة',
+      description: 'نؤمن أن الشفافية والصدق هما العملة الوحيدة التي لا تفقد قيمتها. لا وعود زائفة ولا تكاليف مخفية.',
     },
     {
-      icon: Target,
+      icon: <Target className="w-8 h-8 text-secondary" />,
       title: 'الفهم العميق',
-      description: 'نستثمر الوقت في فهم عميق لعملك وسوقك وتحدياتك',
+      description: 'لا نبدأ أي مشروع قبل أن نفهم "لماذا" و "كيف". ندرس سوقك ومنافسيك بعمق قبل كتابة سطر واحد.',
     },
     {
-      icon: Zap,
-      title: 'النتائج الملموسة',
-      description: 'نركز على تحقيق نتائج قابلة للقياس والنمو المستدام',
+      icon: <Zap className="w-8 h-8 text-accent" />,
+      title: 'النتائج هي الحكم',
+      description: 'في النهاية، ما يهم هو العائد على الاستثمار (ROI). نحن نركز على الأرقام التي تزيد أرباحك.',
     },
+  ];
+
+  // إحصائيات سريعة
+  const stats = [
+    { label: 'سنة خبرة تنفيذية', value: '+20' },
+    { label: 'سنوات باسم ريو', value: '10' },
+    { label: 'شريك نجاح', value: '+200' },
+    { label: 'حملة ناجحة', value: '+500' },
   ];
 
   return (
     <div className="min-h-screen">
-      {/* Header */}
-      <section className="bg-gradient-to-br from-primary/5 to-secondary/5 py-16 md:py-24">
+      {/* القسم الرئيسي: العنوان */}
+      <section className="bg-gradient-to-br from-primary/5 to-secondary/5 py-20">
         <div className="container text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">من نحن</h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            وكالة تسويق متخصصة في تحويل الرؤى إلى نتائج ملموسة
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-primary">
+            قصة <span className="text-secondary">ريو</span>
+          </h1>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            منذ 2015، ونحن نعمل كشريك تنفيذي للشركات في مصر والسعودية. <br />
+            لسنا مجرد وكالة، نحن ذراعك الاستراتيجي للنمو.
           </p>
         </div>
       </section>
 
-      {/* Story */}
-      <section className="section-padding bg-background">
-        <div className="container max-w-3xl">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">قصتنا</h2>
-          <div className="space-y-4 text-lg text-muted-foreground">
-            <p>
-              بدأت رحلتنا من إيمان بسيط: أن النجاح الحقيقي يأتي من الجمع بين الأخلاق والكفاءة والفهم العميق.
-            </p>
-            <p>
-              بعد 20 سنة من الخبرة العملية في تأسيس وإعادة هيكلة الشركات، قررنا تأسيس RIO لمساعدة الشركات على تحقيق أحلامها.
-            </p>
-            <p>
-              مهمتنا بسيطة: نمكّن عملاءنا من خلال تقديم حلول تسويقية متكاملة، مبنية على استشارات استراتيجية وتعتمد على خبرة عميقة بالسوق.
-            </p>
-            <p className="font-semibold text-primary">
-              رؤيتنا: أن نكون الوجهة الاستشارية والتنفيذية الأكثر ثقة، والقوة الدافعة وراء قصص نجاح الشركات الطموحة في مصر.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Values */}
-      <section className="section-padding bg-card">
+      {/* قسم القصة: من نحن */}
+      <section className="py-16 md:py-24 bg-background">
         <div className="container">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">قيمنا الجوهرية</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {coreValues.map((value, index) => {
-              const Icon = value.icon;
-              return (
-                <Card key={index} className="border-border">
-                  <CardHeader>
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                      <Icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <CardTitle>{value.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{value.description}</p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* النص */}
+            <div className="space-y-6">
+              <h2 className="text-3xl font-bold mb-4">أكثر من مجرد "تسويق"</h2>
+              <div className="text-lg text-muted-foreground space-y-4 leading-loose">
+                <p>
+                  بدأت "ريو" من رؤية واضحة لمحمد ربيع بعد سنوات من العمل التنفيذي: السوق مليء بالشركات التي "تنفذ" ما يطلبه العميل، لكنه يفتقد للشريك الذي "يرشد" العميل لما يحتاجه فعلاً.
+                </p>
+                <p>
+                  في عام 2015، انطلقت ريو (RIO) لتسد هذه الفجوة. نحن لا نبيع "باقات سوشيال ميديا"، بل نبيع "نمو شركات". دمجنا الخبرة الإدارية العميقة مع أدوات التسويق الحديثة لنقدم نموذج عمل فريد.
+                </p>
+                <p className="font-semibold text-foreground">
+                  نحن نعمل معك وكأننا شركاء في رأس المال، حريصون على كل مليم يُصرف وعلى العائد الذي سيعود به.
+                </p>
+              </div>
+
+              <div className="pt-6">
+                <Link href="/contact">
+                  <a>
+                    <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-white px-8 shadow-lg shadow-secondary/20">
+                      ابدأ قصتك معنا
+                    </Button>
+                  </a>
+                </Link>
+              </div>
+            </div>
+
+            {/* الإحصائيات / الصورة */}
+            <div className="grid grid-cols-2 gap-6">
+              {stats.map((stat, idx) => (
+                <Card key={idx} className="text-center border-primary/10 bg-card hover:bg-accent/5 transition-colors">
+                  <CardContent className="pt-8 pb-8">
+                    <div className="text-4xl md:text-5xl font-bold text-secondary mb-2">{stat.value}</div>
+                    <div className="text-muted-foreground font-medium">{stat.label}</div>
                   </CardContent>
                 </Card>
-              );
-            })}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Metrics */}
-      <section className="section-padding bg-gradient-to-br from-primary/5 to-secondary/5">
+      {/* قسم القيم: لماذا نحن؟ */}
+      <section className="py-20 bg-muted/30">
         <div className="container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { number: '20+', label: 'سنة خبرة' },
-              { number: '50+', label: 'شركة ساعدناها' },
-              { number: '300%', label: 'متوسط النمو' },
-              { number: '95%', label: 'رضا العملاء' },
-            ].map((metric, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
-                  {metric.number}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold mb-4">قيمنا الراسخة</h2>
+            <div className="w-20 h-1 bg-secondary mx-auto rounded-full" />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {coreValues.map((value, idx) => (
+              <div key={idx} className="bg-background p-8 rounded-2xl border border-border/50 shadow-sm hover:shadow-md transition-all text-center group">
+                <div className="w-16 h-16 mx-auto bg-primary/5 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  {value.icon}
                 </div>
-                <p className="text-muted-foreground">{metric.label}</p>
+                <h3 className="text-xl font-bold mb-3">{value.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {value.description}
+                </p>
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Charter */}
-      <section className="section-padding bg-background">
-        <div className="container max-w-3xl">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">التزامنا لك</h2>
-          <Card className="border-primary/20 bg-primary/5">
-            <CardContent className="pt-6">
-              <ul className="space-y-4">
-                {[
-                  'نضع مصلحتك قبل أي شيء آخر',
-                  'نستثمر الوقت في فهم عميق لعملك',
-                  'نقدم حلولاً مخصصة وفعالة',
-                  'نركز على نتائج قابلة للقياس',
-                  'نكون شركاء حقيقيين في نموك',
-                  'نتحسن باستمرار ونتعلم من كل تجربة',
-                  'نحترم وقتك وأموالك',
-                  'نعمل بأخلاقية واحترافية عالية',
-                ].map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center flex-shrink-0 mt-0.5 text-sm font-bold">
-                      ✓
-                    </div>
-                    <span className="text-muted-foreground">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="section-padding bg-gradient-to-br from-primary to-secondary text-primary-foreground">
-        <div className="container text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">هل أنت مستعد للشراكة معنا؟</h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-            دعنا نتحدث عن كيفية مساعدتك في تحقيق أهدافك
-          </p>
-          <Link href="/contact">
-            <a>
-              <Button size="lg" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90">
-                احجز جلسة استشارية مجانية
-              </Button>
-            </a>
-          </Link>
         </div>
       </section>
     </div>
