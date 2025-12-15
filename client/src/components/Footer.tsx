@@ -1,5 +1,5 @@
 import { Link } from 'wouter';
-import { Linkedin, Facebook, Instagram, Mail, Phone } from 'lucide-react';
+import { Linkedin, Facebook, Instagram, Mail, Phone, MessageCircle } from 'lucide-react';
 
 /**
  * Footer Component
@@ -37,9 +37,7 @@ export default function Footer() {
           <div className="md:col-span-1">
             <Link href="/">
               <a className="flex items-center gap-2 font-bold text-xl text-primary hover:text-primary/80 mb-4">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold">
-                  R
-                </div>
+                <img src="/logo.png" alt="RIO" className="w-8 h-8 object-contain" />
                 <span>RIO</span>
               </a>
             </Link>
@@ -49,7 +47,7 @@ export default function Footer() {
             {/* Social Links */}
             <div className="flex gap-4">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/rio4ims/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
@@ -58,7 +56,7 @@ export default function Footer() {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/rio4ims"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
@@ -67,13 +65,22 @@ export default function Footer() {
                 <Facebook className="w-5 h-5" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/rio4ims"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" />
+              </a>
+              <a
+                href="https://wa.me/201503000790"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                aria-label="WhatsApp"
+              >
+                <MessageCircle className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -116,11 +123,12 @@ export default function Footer() {
               <span>info@rio.com</span>
             </a>
             <a
-              href="tel:+201000000000"
+              href="tel:+201503000790"
               className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+              dir="ltr"
             >
               <Phone className="w-4 h-4" />
-              <span>+20 100 000 0000</span>
+              <span>+20 150 300 0790</span>
             </a>
           </div>
         </div>

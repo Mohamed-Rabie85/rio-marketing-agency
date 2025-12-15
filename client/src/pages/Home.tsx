@@ -2,6 +2,7 @@ import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight, CheckCircle2, TrendingUp, ShieldCheck, Target } from 'lucide-react';
+import RioMethodology from '@/components/RioMethodology';
 import ClientLogos from '@/components/ui/client-logos';
 
 /**
@@ -21,7 +22,7 @@ export default function Home() {
               ريو: شريكك التنفيذي <br className="hidden md:block" /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary">لنمو الأعمال</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-              خبرة 9 سنوات في تحويل الشركات. شريكك التنفيذي الذي يحوّل تحديات أعمالك إلى نمو مستدام وعائد استثمار حقيقي.
+              خبرة من 2015 في تحويل الشركات. شريكك التنفيذي الذي يحوّل تحديات أعمالك إلى نمو مستدام وعائد استثمار حقيقي.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
@@ -54,7 +55,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-bold mb-2">الخبرة التنفيذية (20 عاماً)</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                لا نقدم نظريات. خبرة 20 عاماً في تأسيس الشركات، و9 سنوات لـ "ريو" في مصر والسعودية تضمن لك خططاً قابلة للتطبيق.
+                لا نقدم نظريات. خبرة 20 عاماً في تأسيس الشركات، و 10 سنوات لـ "ريو" في مصر والسعودية تضمن لك خططاً قابلة للتطبيق.
               </p>
             </div>
             <div className="p-6 rounded-2xl bg-background border border-border/50 shadow-sm hover:shadow-md transition-all">
@@ -78,6 +79,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* 1.75. METHODOLOGY: The Process */}
+      <RioMethodology />
 
       {/* 2. SOCIAL PROOF: Client Logos */}
       <ClientLogos />
@@ -166,7 +170,7 @@ export default function Home() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                نعمل بمنهجية استراتيجية واضحة يشرف عليها <span className="inline-flex items-center gap-2 mx-1 px-2 py-0.5 rounded-md bg-primary/5 border border-primary/20"><span className="font-english font-bold text-primary tracking-wider">Mr.</span> <span className="font-bold text-foreground">محمد ربيع</span></span>، لضمان أن كل خطوة تخدم أهداف نمو شركتك.
+                نعمل بمنهجية استراتيجية واضحة يشرف عليها <span className="inline-flex items-center gap-2 mx-1 px-2 py-0.5 rounded-md bg-primary/5 border border-primary/20"><span className="font-bold text-primary tracking-wider">مستر /</span> <span className="font-bold text-foreground">محمد ربيع</span></span>، لضمان أن كل خطوة تخدم أهداف نمو شركتك.
               </p>
             </CardContent>
           </Card>
@@ -236,7 +240,7 @@ export default function Home() {
               <div key={i} className="group cursor-pointer rounded-2xl border border-border/50 bg-card overflow-hidden hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1">
                 <div className="aspect-[16/10] bg-muted relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-5 opacity-90 group-hover:opacity-100 transition-opacity">
-                    <span className="text-white text-xs font-bold bg-primary px-3 py-1 rounded-full shadow-lg backdrop-blur-md">استراتيجية</span>
+                    <span className="text-white text-xs font-bold bg-secondary px-3 py-1 rounded-full shadow-lg backdrop-blur-md">استراتيجية</span>
                   </div>
                 </div>
                 <div className="p-6">
