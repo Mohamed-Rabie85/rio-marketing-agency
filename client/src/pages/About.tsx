@@ -118,6 +118,64 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      {/* فريق العمل */}
+      <section className="section-padding bg-background">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">فريق يفهم طموحك</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              خلف كل نجاح فريق شغوف يجمع بين الإبداع الفني والتحليل الرقمي الدقيق.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {/* إبراهيم فيض */}
+            <div className="bg-background rounded-2xl p-6 shadow-sm border border-border/50 text-center hover:shadow-md transition-all group">
+              <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-primary/10 group-hover:border-primary transition-colors">
+                <img
+                  src="https://avatar.iran.liara.run/public/boy?username=Ibrahim"
+                  alt="Ibrahim Fyad"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="font-bold text-lg">إبراهيم فيض</h3>
+              <p className="text-sm text-secondary font-medium mb-2">Digital Marketer</p>
+              <p className="text-xs text-muted-foreground">
+                متخصص في إدارة الحملات الإعلانية وتحليل الأداء لضمان أعلى عائد استثمار.
+              </p>
+            </div>
+
+            {/* شروق حازم */}
+            <div className="bg-background rounded-2xl p-6 shadow-sm border border-border/50 text-center hover:shadow-md transition-all group">
+              <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-primary/10 group-hover:border-primary transition-colors">
+                <img
+                  src="https://avatar.iran.liara.run/public/girl?username=Shorouk"
+                  alt="Shorouk Hazem"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="font-bold text-lg">شروق حازم</h3>
+              <p className="text-sm text-secondary font-medium mb-2">Digital Marketer</p>
+              <p className="text-xs text-muted-foreground">
+                مبدعة في صياغة المحتوى وبناء استراتيجيات التواصل الاجتماعي التي تخلق تفاعلاً حقيقياً.
+              </p>
+            </div>
+
+            {/* بطاقة الانضمام للفريق */}
+            <div className="bg-primary/5 rounded-2xl p-6 border border-dashed border-primary/30 flex flex-col justify-center items-center text-center hover:bg-primary/10 transition-colors cursor-pointer">
+              <div className="w-16 h-16 bg-background rounded-full flex items-center justify-center mb-4 shadow-sm text-2xl">
+                🚀
+              </div>
+              <h3 className="font-bold text-lg">انضم إلينا؟</h3>
+              <p className="text-xs text-muted-foreground mt-2">
+                نبحث دائماً عن المبدعين.<br />أرسل سيرتك الذاتية.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

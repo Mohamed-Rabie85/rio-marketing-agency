@@ -20,47 +20,61 @@ export default function Navigation() {
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link href="/">
-          <a className="flex items-center gap-2 group">
-            <img
-              src="/logo.png"
-              alt="RIO Marketing Solutions"
-              className="h-12 w-auto object-contain transition-transform group-hover:scale-105"
-            />
-            <div className="flex flex-col">
-              <span className="text-xl font-bold text-primary leading-none">
-                ريو للحلول التسويقية
-              </span>
-              <span className="text-[0.65rem] text-muted-foreground font-medium tracking-wider uppercase">
-                Marketing Solutions
-              </span>
+          <a className="flex items-center gap-3 group">
+            <div className="relative w-12 h-12 overflow-hidden rounded-full border border-border/50 shadow-sm group-hover:scale-105 transition-transform bg-white p-1">
+              <img
+                src="/logo.png"
+                alt="RIO Marketing Solutions"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <div className="hidden md:block">
+              <span className="block font-bold text-xl leading-none text-primary">RIO</span>
+              <span className="block text-[10px] tracking-widest text-muted-foreground">MARKETING SOLUTIONS</span>
             </div>
           </a>
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => (
-            <Link key={item.href} href={item.href}>
-              <a
-                className={cn(
-                  "text-sm font-medium transition-colors hover:text-primary relative py-1",
-                  location === item.href
-                    ? "text-primary after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary after:rounded-full"
-                    : "text-muted-foreground"
-                )}
-              >
-                {item.label}
-              </a>
-            </Link>
-          ))}
-          <Link href="/contact">
-            <a>
-              <Button className="bg-secondary hover:bg-secondary/90 text-white shadow-lg shadow-secondary/20 transition-all hover:-translate-y-0.5">
-                تواصل معنا
-              </Button>
+        <div className="hidden md:flex items-center gap-1 bg-background/50 backdrop-blur-md px-2 py-1 rounded-full border border-border/50 shadow-sm">
+          <Link href="/">
+            <a className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${location === '/' ? 'bg-primary/10 text-primary' : 'text-muted-foreground hover:text-primary hover:bg-muted'}`}>
+              الرئيسية
+            </a>
+          </Link>
+          <Link href="/services">
+            <a className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${location === '/services' ? 'bg-primary/10 text-primary' : 'text-muted-foreground hover:text-primary hover:bg-muted'}`}>
+              خدماتنا
+            </a>
+          </Link>
+          <Link href="/case-studies">
+            <a className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${location === '/case-studies' ? 'bg-primary/10 text-primary' : 'text-muted-foreground hover:text-primary hover:bg-muted'}`}>
+              قصص نجاح
+            </a>
+          </Link>
+          <Link href="/founder">
+            <a className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${location === '/founder' ? 'bg-primary/10 text-primary' : 'text-muted-foreground hover:text-primary hover:bg-muted'}`}>
+              المؤسس
+            </a>
+          </Link>
+          <Link href="/about">
+            <a className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${location === '/about' ? 'bg-primary/10 text-primary' : 'text-muted-foreground hover:text-primary hover:bg-muted'}`}>
+              من نحن
+            </a>
+          </Link>
+          <Link href="/blog">
+            <a className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${location === '/blog' ? 'bg-primary/10 text-primary' : 'text-muted-foreground hover:text-primary hover:bg-muted'}`}>
+              المدونة
             </a>
           </Link>
         </div>
+
+        {/* CTA Button */}
+        <Link href="/contact">
+          <Button className="bg-secondary hover:bg-secondary/90 text-white shadow-lg shadow-secondary/20 rounded-full px-6">
+            لنتحدث
+          </Button>
+        </Link>
 
         {/* Mobile Menu Button */}
         <button
