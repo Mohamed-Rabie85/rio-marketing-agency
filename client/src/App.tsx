@@ -11,6 +11,7 @@ import CaseStudies from '@/pages/CaseStudies';
 import Founder from '@/pages/Founder';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import LeadMagnet from '@/components/LeadMagnet';
 import { Route, Switch } from 'wouter';
 import ErrorBoundary from './components/ErrorBoundary';
 import { ThemeProvider } from './contexts/ThemeContext';
@@ -47,6 +48,7 @@ function App() {
           {/* مكون التحليلات يوضع هنا ليعمل في كامل الموقع */}
           <Analytics />
           <Toaster />
+          <LeadMagnet />
 
           <div className="flex flex-col min-h-screen">
             <Navigation />
