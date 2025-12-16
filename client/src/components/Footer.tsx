@@ -93,7 +93,7 @@ export default function Footer() {
                 {links.map((link) => (
                   <li key={link.href}>
                     <Link href={link.href}>
-                      <a className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                      <a className="text-sm text-muted-foreground hover:text-secondary transition-colors">
                         {link.label}
                       </a>
                     </Link>
@@ -117,14 +117,14 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row gap-4 text-sm">
             <a
               href="mailto:info@rio.com"
-              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+              className="flex items-center gap-2 text-muted-foreground hover:text-secondary transition-colors"
             >
               <Mail className="w-4 h-4" />
               <span>info@rio.com</span>
             </a>
             <a
               href="tel:+201503000790"
-              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+              className="flex items-center gap-2 text-muted-foreground hover:text-secondary transition-colors"
               dir="ltr"
             >
               <Phone className="w-4 h-4" />

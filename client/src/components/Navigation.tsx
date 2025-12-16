@@ -11,6 +11,8 @@ export default function Navigation() {
   const navItems = [
     { href: "/", label: "الرئيسية" },
     { href: "/services", label: "خدماتنا" },
+    { href: "/case-studies", label: "قصص نجاح" },
+    { href: "/founder", label: "المؤسس" },
     { href: "/about", label: "من نحن" },
     { href: "/blog", label: "المدونة" },
   ];

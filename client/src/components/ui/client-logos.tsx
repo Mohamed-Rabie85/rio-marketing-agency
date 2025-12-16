@@ -1,65 +1,59 @@
-import { useRef, useEffect } from "react";
+import { motion } from "framer-motion";
 
+const clients = [
+    { name: "الشركة الوطنية", logo: "N" },
+    { name: "مجموعة الأمل", logo: "A" },
+    { name: "تطوير للتنمية", logo: "T" },
+    { name: "فيوتشر تك", logo: "F" },
+    { name: "سمارت حلول", logo: "S" },
+    { name: "بيوت السعودية", logo: "K" },
+    { name: "رؤية المستقبل", logo: "R" },
+    { name: "إعمار", logo: "E" },
+];
+
+/**
+ * مكون شعارات العملاء (Infinite Marquee)
+ * يتم عرضه داخل Container لضمان عدم خروجه عن حدود الصفحة.
+ */
 export default function ClientLogos() {
-    const scrollerRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        if (!scrollerRef.current) return;
-        const scrollerContent = scrollerRef.current.querySelector(".scroller__inner");
-        if (!scrollerContent) return;
-
-        // Duplicate content for infinite scroll
-        const scrollerContentArray = Array.from(scrollerContent.children);
-        scrollerContentArray.forEach((item) => {
-            const duplicatedItem = item.cloneNode(true);
-            (duplicatedItem as HTMLElement).setAttribute("aria-hidden", "true");
-            scrollerContent.appendChild(duplicatedItem);
-        });
-    }, []);
-
-    const clients = [
-        "الشركة الوطنية",
-        "مجموعة الأمل",
-        "تطوير للتنمية",
-        "مصانع التقنية",
-        "المشرق العربي",
-        "نيو هورايزون",
-        "إعمار المستقبل",
-        "حلول متكاملة"
-    ];
-
     return (
-        <section className="py-10 bg-muted/30 overflow-hidden">
-            <div className="container text-center mb-8">
-                <p className="text-muted-foreground font-medium">شركاء نجاح وثقوا بنا</p>
+        <section className="py-10 bg-white" dir="ltr">
+            <div className="container mb-8 text-center">
+                <p className="text-sm font-bold text-muted-foreground tracking-widest uppercase">
+                    شركاء نجاح وثقوا بنا
+                </p>
             </div>
 
-            <div
-                ref={scrollerRef}
-                className="scroller relative max-w-7xl mx-auto overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]"
-            >
-                <div className="scroller__inner flex w-max flex-nowrap animate-scroll">
-                    {clients.map((client, idx) => (
-                        <div
-                            key={idx}
-                            className="flex items-center justify-center w-64 h-24 px-8 text-xl text-muted-foreground font-bold hover:text-primary transition-colors border-l border-border/10 last:border-l-0"
-                        >
-                            {client}
-                        </div>
-                    ))}
+            <div className="container overflow-hidden relative">
+                <div className="relative flex">
+                    {/* نستخدم Framer Motion لتحريك الحاوية بالكامل */}
+                    <motion.div
+                        className="flex min-w-full"
+                        animate={{ x: "-50%" }}
+                        transition={{
+                            duration: 30,
+                            ease: "linear",
+                            repeat: Infinity,
+                        }}
+                    >
+                        {/* نكرر القائمة مرتين لضمان الحركة المستمرة دون انقطاع */}
+                        {[...clients, ...clients].map((client, index) => (
+                            <div
+                                key={index}
+                                className="flex-shrink-0 flex items-center justify-center w-64 h-24 px-8 border-l border-slate-100 last:border-l-0"
+                            >
+                                <span className="text-xl font-bold text-muted-foreground/80 hover:text-primary transition-colors cursor-default whitespace-nowrap">
+                                    {client.name}
+                                </span>
+                            </div>
+                        ))}
+                    </motion.div>
+
+                    {/* تدرج لوني خفيف على الجوانب لعمل Fade Effect */}
+                    <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+                    <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
                 </div>
             </div>
-
-            <style jsx global>{`
-        .animate-scroll {
-          animation: scroll 40s linear infinite;
-        }
-        @keyframes scroll {
-          to {
-            transform: translate(calc(-50% - 1rem));
-          }
-        }
-      `}</style>
         </section>
     );
 }

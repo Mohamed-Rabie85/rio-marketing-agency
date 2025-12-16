@@ -29,7 +29,7 @@ export default function Founder() {
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
                 "التسويق ليس سحراً، بل هو هندسة دقيقة للأرقام والسلوك البشري.
-                مهمتي ليست مجرد إطلاق حملات، بل بناء أنظمة نمو مستدامة تعيش لسنوات."
+                مهمتي ليست مجرد إطلاق حملات، بل بناء أنظمة نمو مستدامة تعيش لسنوات"
               </p>
 
               <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center md:justify-start pt-4">
@@ -93,14 +93,14 @@ export default function Founder() {
             <div className="prose prose-lg dark:prose-invert mx-auto text-muted-foreground leading-loose">
               <p>
                 خلال عملي لسنوات كمدير تنفيذي في كبرى الشركات، كنت أواجه دائماً نفس المشكلة:
-                وكالات التسويق تفهم "الإعلانات" لكنها لا تفهم "البيزنس".
+                وكالات التسويق تفهم "الإعلانات" لكنها لا تفهم "البيزنس"
               </p>
               <p>
                 كنت أرى ميزانيات ضخمة تُصرف على حملات إبداعية لا تحقق عائداً حقيقياً (ROI).
-                لذلك، في عام 2015، قررت بناء <strong>RIO</strong> لتكون الحل الذي كنت أبحث عنه:
+                لذلك، في عام 2015، قررت بناء <strong>RIO</strong> لتكون الحل الذي كنت أبحث عنه
               </p>
               <p className="font-bold text-primary text-xl">
-                "شريك تنفيذي يجلس معك على طاولة اتخاذ القرار، وليس مجرد مورد خدمات."
+                "شريك تنفيذي يجلس معك على طاولة اتخاذ القرار، وليس مجرد مورد خدمات"
               </p>
             </div>
           </div>
@@ -117,7 +117,7 @@ export default function Founder() {
                 <Briefcase className="w-10 h-10 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform" />
                 <h3 className="font-bold text-xl mb-3">إعادة هيكلة الشركات</h3>
                 <p className="text-muted-foreground text-sm">
-                  تحويل الشركات المتعثرة إلى كيانات رابحة من خلال ضبط العمليات والتدفقات المالية.
+                  تحويل الشركات المتعثرة إلى كيانات رابحة من خلال ضبط العمليات والتدفقات المالية
                 </p>
               </CardContent>
             </Card>
@@ -126,7 +126,7 @@ export default function Founder() {
                 <BookOpen className="w-10 h-10 text-secondary mx-auto mb-4 group-hover:scale-110 transition-transform" />
                 <h3 className="font-bold text-xl mb-3">التسويق المبني على البيانات</h3>
                 <p className="text-muted-foreground text-sm">
-                  لا مكان للحدس هنا. كل قرار يُتخذ بناءً على تحليلات دقيقة وسلوك المستهلك.
+                  لا مكان للحدس هنا. كل قرار يُتخذ بناءً على تحليلات دقيقة وسلوك المستهلك
                 </p>
               </CardContent>
             </Card>
@@ -135,7 +135,7 @@ export default function Founder() {
                 <Award className="w-10 h-10 text-accent mx-auto mb-4 group-hover:scale-110 transition-transform" />
                 <h3 className="font-bold text-xl mb-3">القيادة التنفيذية</h3>
                 <p className="text-muted-foreground text-sm">
-                  بناء وتدريب فرق العمل القادرة على حمل الراية واستكمال مسيرة النمو.
+                  بناء وتدريب فرق العمل القادرة على حمل الراية واستكمال مسيرة النمو
                 </p>
               </CardContent>
             </Card>
@@ -148,7 +148,7 @@ export default function Founder() {
         <div className="container text-center">
           <h2 className="text-3xl font-bold mb-6">هل أنت مستعد لنقل عملك للمستوى التالي؟</h2>
           <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
-            لا أعمل مع الجميع. أختار شركائي بعناية لأضمن لهم التركيز الكامل والنتائج الحقيقية.
+            لا أعمل مع الجميع. أختار شركائي بعناية لأضمن لهم التركيز الكامل والنتائج الحقيقية
           </p>
           <Link href="/contact">
             <a>

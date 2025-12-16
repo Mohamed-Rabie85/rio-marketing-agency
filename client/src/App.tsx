@@ -12,6 +12,7 @@ import Founder from '@/pages/Founder';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import LeadMagnet from '@/components/LeadMagnet';
+import ScrollToTop from "@/components/ScrollToTop";
 import { Route, Switch } from 'wouter';
 import ErrorBoundary from './components/ErrorBoundary';
 import { ThemeProvider } from './contexts/ThemeContext';
@@ -51,6 +52,7 @@ function App() {
           <LeadMagnet />
 
           <div className="flex flex-col min-h-screen">
+            <ScrollToTop />
             <Navigation />
             <main className="flex-1">
               <Router />
