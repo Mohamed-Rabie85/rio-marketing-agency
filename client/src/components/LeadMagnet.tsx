@@ -17,7 +17,7 @@ export default function LeadMagnet() {
         if (!hasSeenPopup) {
             const timer = setTimeout(() => {
                 setIsOpen(true);
-            }, 10000); // 10 ثواني
+            }, 20000); // 20 ثانية
             return () => clearTimeout(timer);
         }
     }, []);

@@ -23,7 +23,7 @@ export default function Home() {
             muted
             playsInline
             className="w-full h-full object-cover opacity-60"
-            poster="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80"
+            poster="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=1400"
           >
             <source src="/hero.mp4" type="video/mp4" />
           </video>
@@ -242,19 +242,19 @@ export default function Home() {
                 title: 'كيف تختار الاستراتيجية المناسبة لشركتك؟',
                 category: 'استراتيجيات النمو',
                 date: '15 ديسمبر 2025',
-                image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80'
+                image: 'https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&q=80&w=800'
               },
               {
                 title: 'اتجاهات التسويق الرقمي في 2026',
                 category: 'اتجاهات السوق',
                 date: '12 ديسمبر 2025',
-                image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80'
+                image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800'
               },
               {
                 title: 'قصة نجاح: إعادة هيكلة شركة مقاولات',
                 category: 'قصص نجاح',
                 date: '10 ديسمبر 2025',
-                image: 'https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&q=80'
+                image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800'
               }
             ].map((post, i) => (
               <Card key={i} className="border-none shadow-sm hover:shadow-xl transition-all duration-300 group bg-white overflow-hidden">
@@ -300,7 +300,7 @@ export default function Home() {
       <section className="relative py-32 overflow-hidden text-white text-center">
         <div className="absolute inset-0 bg-primary z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-primary via-blue-800 to-secondary opacity-90" />
-          <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80" className="w-full h-full object-cover mix-blend-overlay opacity-20" alt="" />
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1400" className="w-full h-full object-cover mix-blend-overlay opacity-20" alt="" />
         </div>
 
         <div className="container relative z-10 max-w-4xl">

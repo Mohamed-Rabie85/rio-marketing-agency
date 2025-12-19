@@ -36,9 +36,16 @@ export default function Footer() {
           {/* Company Info */}
           <div className="md:col-span-1">
             <Link href="/">
-              <a className="flex items-center gap-2 font-bold text-xl text-primary hover:text-primary/80 mb-4">
-                <img src="/logo.png" alt="RIO" className="w-8 h-8 object-contain" />
-                <span>RIO</span>
+              <a className="flex items-center gap-3 mb-4 group">
+                <img
+                  src="/logo.png"
+                  alt="RIO"
+                  className="w-10 h-10 object-contain rounded-lg group-hover:scale-105 transition-transform"
+                />
+                <div>
+                  <span className="block font-bold text-base leading-tight text-foreground">ريو للحلول التسويقية</span>
+                  <span className="block text-[10px] tracking-wider text-muted-foreground font-medium">RIO MARKETING SOLUTIONS</span>
+                </div>
               </a>
             </Link>
             <p className="text-sm text-muted-foreground mb-4">

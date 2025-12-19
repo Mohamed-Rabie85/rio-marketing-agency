@@ -19,20 +19,18 @@ export default function Navigation() {
 
   return (
     <nav className="fixed w-full bg-background/80 backdrop-blur-md z-50 border-b border-border/50">
-      <div className="container mx-auto px-4 h-20 flex items-center justify-between">
+      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/">
-          <a className="flex items-center gap-3 group">
-            <div className="relative w-12 h-12 overflow-hidden rounded-full border border-border/50 shadow-sm group-hover:scale-105 transition-transform bg-white p-1">
-              <img
-                src="/logo.png"
-                alt="RIO Marketing Solutions"
-                className="w-full h-full object-contain"
-              />
-            </div>
+          <a className="flex items-center gap-2.5 group">
+            <img
+              src="/logo.png"
+              alt="RIO Marketing Solutions"
+              className="w-9 h-9 object-contain rounded-lg group-hover:scale-105 transition-transform"
+            />
             <div className="hidden md:block">
-              <span className="block font-bold text-xl leading-none text-primary">RIO</span>
-              <span className="block text-[10px] tracking-widest text-muted-foreground">MARKETING SOLUTIONS</span>
+              <span className="block font-bold text-base leading-tight text-foreground">ريو للحلول التسويقية</span>
+              <span className="block text-[10px] tracking-wider text-muted-foreground font-medium">RIO MARKETING SOLUTIONS</span>
             </div>
           </a>
         </Link>

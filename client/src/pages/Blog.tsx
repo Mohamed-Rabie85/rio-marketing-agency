@@ -30,7 +30,7 @@ export default function Blog() {
       category: 'استراتيجيات النمو',
       author: 'محمد ربيع',
       date: '15 ديسمبر 2025',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80',
+      image: 'https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&q=80&w=800',
     },
     {
       id: 2,
@@ -39,7 +39,7 @@ export default function Blog() {
       category: 'ريادة الأعمال',
       author: 'فريق ريو',
       date: '12 ديسمبر 2025',
-      image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&q=80',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
     },
     {
       id: 3,
@@ -48,7 +48,7 @@ export default function Blog() {
       category: 'قصص نجاح',
       author: 'محمد ربيع',
       date: '10 ديسمبر 2025',
-      image: 'https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&q=80',
+      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800',
     },
     {
       id: 4,
@@ -57,7 +57,7 @@ export default function Blog() {
       category: 'اتجاهات السوق',
       author: 'فريق ريو',
       date: '05 ديسمبر 2025',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80',
+      image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=800',
     },
   ];
 
