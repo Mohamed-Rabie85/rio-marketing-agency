@@ -66,7 +66,7 @@ export default function CaseStudies() {
       title: 'المرسم الأول',
       subtitle: 'تحول رقمي محلي',
       description: 'متجر قرطاسية وأدوات فنية. التحدي: تحويل الاهتمام الرقمي إلى زيارات فعلية للمحل.',
-      image: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&q=80&w=1200',
+      image: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&q=80&w=1200',
       icon: <Store className="w-6 h-6" />,
       results: [
         { label: 'زيادة الزيارات', value: 'للمحل', icon: <Users className="w-4 h-4 text-green-500" /> },

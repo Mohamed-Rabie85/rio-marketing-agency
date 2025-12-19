@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- الصفحة الرئيسية -->
+  <url>
+    <loc>https://rio-marketing.com/</loc>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rio-marketing.com/" />
+  </url>
+  
+  <!-- صفحة الخدمات -->
+  <url>
+    <loc>https://rio-marketing.com/services</loc>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rio-marketing.com/services" />
+  </url>
+  
+  <!-- صفحة قصص النجاح -->
+  <url>
+    <loc>https://rio-marketing.com/case-studies</loc>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rio-marketing.com/case-studies" />
+  </url>
+  
+  <!-- صفحة المؤسس -->
+  <url>
+    <loc>https://rio-marketing.com/founder</loc>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rio-marketing.com/founder" />
+  </url>
+  
+  <!-- صفحة من نحن -->
+  <url>
+    <loc>https://rio-marketing.com/about</loc>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rio-marketing.com/about" />
+  </url>
+  
+  <!-- صفحة المدونة -->
+  <url>
+    <loc>https://rio-marketing.com/blog</loc>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rio-marketing.com/blog" />
+  </url>
+  
+  <!-- صفحة تواصل معنا -->
+  <url>
+    <loc>https://rio-marketing.com/contact</loc>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rio-marketing.com/contact" />
+  </url>
+  
+</urlset>
