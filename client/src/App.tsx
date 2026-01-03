@@ -50,7 +50,7 @@ function Router() {
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider defaultTheme="light">
+      <ThemeProvider defaultTheme="light" switchable={true}>
         <TooltipProvider>
           {/* مكون التحليلات يوضع هنا ليعمل في كامل الموقع */}
           <Analytics />

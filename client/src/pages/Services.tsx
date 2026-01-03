@@ -1,4 +1,5 @@
 import { Link } from 'wouter';
+import { motion } from "framer-motion";
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Check, ArrowRight, Briefcase, Zap, UserCheck } from 'lucide-react';
@@ -74,53 +75,62 @@ export default function Services() {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {servicePillars.map((pillar, index) => (
-              <Card
+              <motion.div
                 key={index}
-                className={`relative flex flex-col border-border/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 ${pillar.highlight ? 'border-secondary/50 shadow-lg shadow-secondary/5 scale-105 z-10' : 'bg-card/50'}`}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -10, scale: 1.02 }}
+                className={`relative flex flex-col h-full`}
               >
-                {pillar.highlight && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-secondary text-white text-sm font-bold px-4 py-1 rounded-full shadow-lg">
-                    الأكثر طلباً للنمو
-                  </div>
-                )}
+                <Card
+                  className={`flex flex-col h-full border-border/50 transition-colors duration-300 ${pillar.highlight ? 'border-secondary/50 shadow-lg shadow-secondary/5 z-10' : 'bg-card/50 hover:bg-card hover:border-secondary/20'}`}
+                >
+                  {pillar.highlight && (
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-secondary text-white text-sm font-bold px-4 py-1 rounded-full shadow-lg z-20">
+                      الأكثر طلباً للنمو
+                    </div>
+                  )}
 
-                <CardHeader className="text-center pt-10 pb-6">
-                  <div className={`w-20 h-20 mx-auto rounded-2xl flex items-center justify-center mb-6 bg-background shadow-sm border ${pillar.highlight ? 'border-secondary/20' : 'border-border'}`}>
-                    {pillar.icon}
-                  </div>
-                  <CardTitle className="text-2xl font-bold text-foreground mb-3">{pillar.title}</CardTitle>
-                  <CardDescription className="text-base leading-relaxed text-muted-foreground">
-                    {pillar.description}
-                  </CardDescription>
-                </CardHeader>
+                  <CardHeader className="text-center pt-10 pb-6">
+                    <div className={`w-20 h-20 mx-auto rounded-2xl flex items-center justify-center mb-6 bg-background shadow-sm border transition-colors duration-300 ${pillar.highlight ? 'border-secondary/20' : 'border-border group-hover:border-secondary/20'}`}>
+                      {pillar.icon}
+                    </div>
+                    <CardTitle className="text-2xl font-bold text-foreground mb-3">{pillar.title}</CardTitle>
+                    <CardDescription className="text-base leading-relaxed text-muted-foreground">
+                      {pillar.description}
+                    </CardDescription>
+                  </CardHeader>
 
-                <CardContent className="flex-grow">
-                  <div className="space-y-4">
-                    {pillar.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-start gap-3">
-                        <div className={`mt-1 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 ${pillar.highlight ? 'bg-secondary/10 text-secondary' : 'bg-primary/10 text-primary'}`}>
-                          <Check className="w-3 h-3" />
+                  <CardContent className="flex-grow">
+                    <div className="space-y-4">
+                      {pillar.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-start gap-3">
+                          <div className={`mt-1 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 ${pillar.highlight ? 'bg-secondary/10 text-secondary' : 'bg-primary/10 text-primary'}`}>
+                            <Check className="w-3 h-3" />
+                          </div>
+                          <span className="text-sm font-medium text-foreground/80">{feature}</span>
                         </div>
-                        <span className="text-sm font-medium text-foreground/80">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
+                      ))}
+                    </div>
+                  </CardContent>
 
-                <CardFooter className="pt-6 pb-8">
-                  <Link href="/contact">
-                    <a className="w-full">
-                      <Button
-                        size="lg"
-                        variant={pillar.highlight ? "default" : "outline"}
-                        className={`w-full h-12 text-base ${pillar.highlight ? 'bg-secondary hover:bg-secondary/90 text-white shadow-lg shadow-secondary/20' : 'border-primary/20 hover:bg-primary/5 text-primary'}`}
-                      >
-                        {pillar.cta} <ArrowRight className="w-4 h-4 mr-2" />
-                      </Button>
-                    </a>
-                  </Link>
-                </CardFooter>
-              </Card>
+                  <CardFooter className="pt-6 pb-8 mt-auto">
+                    <Link href="/contact">
+                      <a className="w-full">
+                        <Button
+                          size="lg"
+                          variant={pillar.highlight ? "default" : "outline"}
+                          className={`w-full h-12 text-base transition-all duration-300 ${pillar.highlight ? 'bg-secondary hover:bg-secondary/90 text-white shadow-lg shadow-secondary/20 hover:shadow-secondary/40' : 'border-primary/20 hover:bg-primary/5 text-primary hover:border-primary/50'}`}
+                        >
+                          {pillar.cta} <ArrowRight className="w-4 h-4 mr-2" />
+                        </Button>
+                      </a>
+                    </Link>
+                  </CardFooter>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </div>

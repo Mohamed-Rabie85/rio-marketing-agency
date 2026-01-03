@@ -1,4 +1,5 @@
 import { Link } from 'wouter';
+import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight, CheckCircle2, TrendingUp, ShieldCheck, Target } from 'lucide-react';
@@ -73,35 +74,59 @@ export default function Home() {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* بطاقات تعرض أيقونات بصرية */}
-            <div className="group bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform">
-                <TrendingUp className="w-8 h-8" />
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              whileHover={{ y: -8, scale: 1.02 }}
+            >
+              <div className="group bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-2xl hover:border-primary/20 transition-all duration-300 h-full">
+                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 text-primary group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300">
+                  <TrendingUp className="w-8 h-8" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-slate-900">خبرة تنفيذية</h3>
+                <p className="text-slate-600 leading-relaxed">
+                  لا نقدم نظريات. خبرة 20 عاماً في تأسيس الشركات، و 10 سنوات لـ "ريو" تضمن لك خططاً قابلة للتطبيق.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-slate-900">خبرة تنفيذية</h3>
-              <p className="text-slate-600 leading-relaxed">
-                لا نقدم نظريات. خبرة 20 عاماً في تأسيس الشركات، و 10 سنوات لـ "ريو" تضمن لك خططاً قابلة للتطبيق.
-              </p>
-            </div>
+            </motion.div>
 
-            <div className="group bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div className="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6 text-secondary group-hover:scale-110 transition-transform">
-                <ShieldCheck className="w-8 h-8" />
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              whileHover={{ y: -8, scale: 1.02 }}
+            >
+              <div className="group bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-2xl hover:border-secondary/20 transition-all duration-300 h-full">
+                <div className="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6 text-secondary group-hover:scale-110 group-hover:bg-secondary/20 transition-all duration-300">
+                  <ShieldCheck className="w-8 h-8" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-slate-900">شفافية مطلقة</h3>
+                <p className="text-slate-600 leading-relaxed">
+                  شراكة حقيقية بلا أسرار. تقاريرنا توضح أين يُنفق كل جنيه وما هو العائد الفعلي (ROI) بدقة.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-slate-900">شفافية مطلقة</h3>
-              <p className="text-slate-600 leading-relaxed">
-                شراكة حقيقية بلا أسرار. تقاريرنا توضح أين يُنفق كل جنيه وما هو العائد الفعلي (ROI) بدقة.
-              </p>
-            </div>
+            </motion.div>
 
-            <div className="group bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mb-6 text-accent group-hover:scale-110 transition-transform">
-                <Target className="w-8 h-8" />
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              whileHover={{ y: -8, scale: 1.02 }}
+            >
+              <div className="group bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-2xl hover:border-accent/20 transition-all duration-300 h-full">
+                <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mb-6 text-accent group-hover:scale-110 group-hover:bg-accent/20 transition-all duration-300">
+                  <Target className="w-8 h-8" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-slate-900">منهجية علمية</h3>
+                <p className="text-slate-600 leading-relaxed">
+                  نستخدم أحدث أدوات تحليل البيانات وسيكولوجية المستهلك لنحول الزائرين إلى عملاء دائمين.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-slate-900">منهجية علمية</h3>
-              <p className="text-slate-600 leading-relaxed">
-                نستخدم أحدث أدوات تحليل البيانات وسيكولوجية المستهلك لنحول الزائرين إلى عملاء دائمين.
-              </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

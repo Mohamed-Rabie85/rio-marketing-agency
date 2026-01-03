@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Navigation() {
   const [location] = useLocation();
@@ -75,12 +76,16 @@ export default function Navigation() {
           </Link>
         </div>
 
-        {/* CTA Button */}
-        <Link href="/contact">
-          <Button className="bg-secondary hover:bg-secondary/90 text-white shadow-lg shadow-secondary/20 rounded-full px-6">
-            لنتحدث
-          </Button>
-        </Link>
+
+        {/* CTA Button & Theme Toggle */}
+        <div className="hidden md:flex items-center gap-3">
+          <ThemeToggle />
+          <Link href="/contact">
+            <Button className="bg-secondary hover:bg-secondary/90 text-white shadow-lg shadow-secondary/20 rounded-full px-6">
+              لنتحدث
+            </Button>
+          </Link>
+        </div>
 
         {/* Mobile Menu Button */}
         <button
