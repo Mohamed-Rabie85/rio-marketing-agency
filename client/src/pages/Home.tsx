@@ -7,14 +7,39 @@ import RioMethodology from '@/components/RioMethodology';
 import ClientLogos from '@/components/ui/client-logos';
 import Testimonials from '@/components/Testimonials';
 import blogData from '@/data/blog.json';
+import SEOHead from '@/components/SEOHead';
+import { useEffect } from 'react';
+import { generateOrganizationSchema, injectStructuredData } from '@/lib/structuredData';
 
 /**
  * Home Page
  * Narrative flow: Hook -> Social Proof -> Pain/Solution -> Authority/History -> Plan -> CTA
  */
 export default function Home() {
+  useEffect(() => {
+    // Add Organization Structured Data
+    const orgSchema = generateOrganizationSchema({
+      name: 'ريو للحلول التسويقية',
+      url: typeof window !== 'undefined' ? window.location.origin : '',
+      logo: '/logo.png',
+      description: 'خبرة من 2015 في تحويل الشركات. شريكك التنفيذي الذي يحوّل تحديات أعمالك إلى نمو مستدام وعائد استثمار حقيقي.',
+      contactPoint: {
+        telephone: '+20-XXX-XXX-XXXX',
+        contactType: 'Customer Service',
+        areaServed: 'EG,SA',
+        availableLanguage: ['ar', 'en'],
+      },
+    });
+    injectStructuredData(orgSchema);
+  }, []);
+
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="الرئيسية"
+        description="خبرة من 2015 في تحويل الشركات. شريكك التنفيذي الذي يحوّل تحديات أعمالك إلى نمو مستدام وعائد استثمار حقيقي."
+        keywords="تسويق رقمي, استشارات تسويقية, تطوير أعمال, ريو, مصر, السعودية"
+      />
       {/* 1. قسم الهيرو: فيديو في الخلفية */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-slate-900 text-white">
         {/* طبقة الفيديو الخلفية */}
@@ -43,7 +68,19 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-in fade-in slide-in-from-bottom-5 duration-1000 delay-300">
               <Link href="/contact">
                 <a>
-                  <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-lg bg-secondary hover:bg-secondary/90 shadow-xl shadow-secondary/20 border-none transition-transform hover:scale-105">
+                  <Button
+                    size="lg"
+                    className="w-full sm:w-auto h-14 px-8 text-lg bg-secondary hover:bg-secondary/90 shadow-xl shadow-secondary/20 border-none transition-transform hover:scale-105"
+                    onClick={() => {
+                      if (typeof window !== 'undefined' && (window as any).gtag) {
+                        (window as any).gtag('event', 'cta_click', {
+                          category: 'engagement',
+                          label: 'احجز استشارة مجانية',
+                          location: 'hero_section'
+                        });
+                      }
+                    }}
+                  >
                     احجز استشارة مجانية
                     <ArrowRight className="w-5 h-5 mr-2" />
                   </Button>

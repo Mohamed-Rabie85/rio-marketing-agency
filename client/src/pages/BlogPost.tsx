@@ -4,6 +4,7 @@ import blogData from '@/data/blog.json';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { useEffect } from 'react';
+import Newsletter from '@/components/Newsletter';
 
 export default function BlogPost() {
     const [, params] = useRoute('/blog/:slug');
@@ -150,13 +151,8 @@ export default function BlogPost() {
                             </div>
                         </div>
 
-                        {/* Newsletter placeholder */}
-                        <div className="bg-primary p-6 rounded-3xl text-primary-foreground text-center">
-                            <h4 className="font-bold mb-3">اشترك في النشرة</h4>
-                            <p className="text-xs text-primary-foreground/70 mb-4 leading-relaxed">احصل على أحدث تحليلات السوق مباشرة في بريدك.</p>
-                            <input type="email" placeholder="البريد الإلكتروني" className="w-full h-10 rounded-full bg-white/10 border border-white/20 px-4 text-xs mb-3 text-white placeholder:text-white/50 focus:outline-none focus:ring-1 focus:ring-white/50" />
-                            <Button size="sm" className="w-full h-10 bg-secondary hover:bg-secondary/90 text-white font-bold rounded-full">اشتراك</Button>
-                        </div>
+                        {/* Newsletter subscription */}
+                        <Newsletter variant="sidebar" />
                     </aside>
                 </div>
             </div>

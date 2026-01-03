@@ -16,6 +16,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import LeadMagnet from '@/components/LeadMagnet';
 import ScrollToTop from "@/components/ScrollToTop";
+import BackToTop from '@/components/BackToTop';
 import { Route, Switch } from 'wouter';
 import ErrorBoundary from './components/ErrorBoundary';
 import { ThemeProvider } from './contexts/ThemeContext';
@@ -64,6 +65,7 @@ function App() {
               <Router />
             </main>
             <Footer />
+            <BackToTop />
           </div>
         </TooltipProvider>
       </ThemeProvider>
