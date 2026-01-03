@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
@@ -55,7 +56,7 @@
   /* Bright Red/Orange */
   --secondary-foreground: #ffffff;
 
-  --accent: #0b1e3b; 
+  --accent: #0b1e3b;
   /* Using Primary as accent to reduce noise, or a light variation */
   --accent-foreground: #ffffff;
 
@@ -158,13 +159,23 @@
 
 /* تحريك الشريط بشكل لانهائي (Marquee Animation) */
 @keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-100%); }
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 @keyframes marquee2 {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(0%); }
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 .animate-marquee {

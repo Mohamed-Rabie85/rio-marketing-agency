@@ -15,6 +15,7 @@ export default function Navigation() {
     { href: "/founder", label: "المؤسس" },
     { href: "/about", label: "من نحن" },
     { href: "/blog", label: "المدونة" },
+    { href: "/faq", label: "الأسئلة الشائعة" },
   ];
 
   return (
@@ -65,6 +66,11 @@ export default function Navigation() {
           <Link href="/blog">
             <a className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${location === '/blog' ? 'bg-primary/10 text-primary' : 'text-muted-foreground hover:text-primary hover:bg-muted'}`}>
               المدونة
+            </a>
+          </Link>
+          <Link href="/faq">
+            <a className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${location === '/faq' ? 'bg-primary/10 text-primary' : 'text-muted-foreground hover:text-primary hover:bg-muted'}`}>
+              الأسئلة
             </a>
           </Link>
         </div>

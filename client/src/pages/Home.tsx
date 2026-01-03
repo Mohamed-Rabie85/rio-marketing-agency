@@ -4,6 +4,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight, CheckCircle2, TrendingUp, ShieldCheck, Target } from 'lucide-react';
 import RioMethodology from '@/components/RioMethodology';
 import ClientLogos from '@/components/ui/client-logos';
+import Testimonials from '@/components/Testimonials';
+import blogData from '@/data/blog.json';
 
 /**
  * Home Page
@@ -63,6 +65,9 @@ export default function Home() {
         <ClientLogos />
       </section>
 
+      {/* 2.5. آراء العملاء */}
+      <Testimonials />
+
       {/* 3. القيمة المقترحة: خلفية مميزة */}
       <section className="py-24 bg-slate-50">
         <div className="container">
@@ -117,7 +122,7 @@ export default function Home() {
               {/* شارة عائمة */}
               <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-lg border border-slate-100 z-20 hidden md:block animate-in fade-in slide-in-from-left-5">
                 <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 rounded-full bg-red-500 animate-pulse" />
+                  <div className="w-3 h-3 rounded-full bg-red-50 animate-pulse" />
                   <span className="font-bold text-slate-900">هل ميزانيتك تنزف؟</span>
                 </div>
               </div>
@@ -237,44 +242,25 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: 'كيف تختار الاستراتيجية المناسبة لشركتك؟',
-                category: 'استراتيجيات النمو',
-                date: '15 ديسمبر 2025',
-                image: 'https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&q=80&w=800'
-              },
-              {
-                title: 'اتجاهات التسويق الرقمي في 2026',
-                category: 'اتجاهات السوق',
-                date: '12 ديسمبر 2025',
-                image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800'
-              },
-              {
-                title: 'قصة نجاح: إعادة هيكلة شركة مقاولات',
-                category: 'قصص نجاح',
-                date: '10 ديسمبر 2025',
-                image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800'
-              }
-            ].map((post, i) => (
-              <Card key={i} className="border-none shadow-sm hover:shadow-xl transition-all duration-300 group bg-white overflow-hidden">
+            {blogData.slice(0, 3).map((post, i) => (
+              <Card key={i} className="border-none shadow-sm hover:shadow-xl transition-all duration-300 group bg-white overflow-hidden rounded-2xl">
                 <div className="h-48 overflow-hidden relative">
                   <div className="absolute top-4 right-4 z-10">
-                    <span className="bg-white/90 text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm backdrop-blur-sm">
+                    <span className="bg-white/90 text-slate-900 text-[10px] font-bold px-3 py-1 rounded-full shadow-sm backdrop-blur-sm uppercase tracking-wider">
                       {post.category}
                     </span>
                   </div>
                   <img src={post.image} alt={post.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                 </div>
                 <CardContent className="pt-6">
-                  <div className="text-xs text-muted-foreground mb-3 flex items-center gap-2">
+                  <div className="text-[10px] text-muted-foreground mb-3 flex items-center gap-2 font-bold uppercase tracking-widest">
                     <span className="w-2 h-2 rounded-full bg-secondary" />
                     {post.date}
                   </div>
-                  <h3 className="text-xl font-bold mb-3 line-clamp-2 leading-tight group-hover:text-secondary transition-colors">
+                  <h3 className="text-xl font-bold mb-3 line-clamp-2 leading-tight group-hover:text-secondary transition-colors h-14">
                     {post.title}
                   </h3>
-                  <Link href="/blog">
+                  <Link href={`/blog/${post.slug}`}>
                     <a className="text-sm font-bold text-secondary flex items-center gap-1 hover:gap-2 transition-all mt-4">
                       اقرأ المزيد <ArrowRight className="w-3 h-3" />
                     </a>

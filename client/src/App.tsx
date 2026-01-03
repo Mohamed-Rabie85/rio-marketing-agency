@@ -7,8 +7,11 @@ import Services from '@/pages/Services';
 import About from '@/pages/About';
 import Contact from '@/pages/Contact';
 import Blog from '@/pages/Blog';
+import BlogPost from './pages/BlogPost';
 import CaseStudies from '@/pages/CaseStudies';
+import CaseStudyDetail from './pages/CaseStudyDetail';
 import Founder from '@/pages/Founder';
+import FAQ from '@/pages/FAQ';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import LeadMagnet from '@/components/LeadMagnet';
@@ -29,8 +32,11 @@ function Router() {
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/blog" component={Blog} />
+      <Route path="/blog/:slug" component={BlogPost} />
       <Route path="/case-studies" component={CaseStudies} />
+      <Route path="/case-studies/:id" component={CaseStudyDetail} />
       <Route path="/founder" component={Founder} />
+      <Route path="/faq" component={FAQ} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>
